@@ -1,198 +1,267 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
+	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
-	<title>Ow3nso</title>
-	<style type="text/css">
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: red;
-}
-
-.header{
-    border-bottom: 1px solid #E2E8F0;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-}
-.hamburger {
-    display: none;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #101010;
-}
-.nav-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-item {
-    margin-left: 5rem;
-}
-
-.nav-link{
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: #475569;
-}
-
-.nav-link:hover{
-    color: #482ff7;
-}
-
-.nav-logo {
-    font-size: 2.1rem;
-    font-weight: 500;
-    color: #482ff7;
-}
-img{
-	position: absolute;
-	width: 120px;
-	height: 120px;
-}
-.aligncenter {
-    text-align: center;
-}
-
-p2{
-	font-size: 50px;
-	position: absolute;
-    text-align: center;
-    left: 45%;
-    top: 27%;
-    color: white;
-}
-p3{
-	font-size: 50px;
-	position: absolute;
-    left: 30%;
-    top: 37%;
-    color: white;
-}
-
-header{
-	background-color: #020A16;
-}
-
-body{
-	background-color: #A7B5CA;
-	
-}
-h2{
-	font-size: 40px;
-	text-decoration: underline;
-	position: absolute;
-	left: 47%;
-	top: 61%;
-
-}
-
-	</style>
-
-	<script type="text/javascript">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#container{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-color: black;
+		}
+		#reserve1{
+			width: 60%;
+			height: 12%;
+			background-color: chartreuse;
+			right: 0%;
+			position: absolute;
+		}
+		#reserve2{
+			width: 15%;
+			height: 12%;
+			position: absolute;
+			background-color: chartreuse;
+		}
+		#reserve3{
+			width: 15%;
+			height: 20%;
+			position: absolute;
+			background-color: chartreuse;
+			top: 54%;
+		}
+		#reserve4{
+			height: 5%;
+			width: 100%;
+			background-color: chartreuse;
+			position: absolute;
+			top: 95%;
+		}
+		#reserve5{
+			position: absolute;
+			top: 54%;
+			background-color: chartreuse;
+			width: 15%;
+			height: 20%;
+			right: 0%;
+		}
+		#angle{
+			width: 30%;
+			height: 20%;
+			position: absolute;
+			background-color: chartreuse;
+			top: 54%;
+			left: 40%;
+		}
+		#car1{
+			width: 10px;
+			height: 10px;
+			background-color: red;
+			top: 30%;
+			position: absolute;
+		}
+		button{
+			position: absolute;
+            top: 50%;
+		}
+		#barrier1{
+			position: absolute;
+			width: 5%;
+			height: 2%;
+			top: 32%;
+			right: 0%;
+			background-color: chartreuse;
+		}
+		#barrier2{
+			position: absolute;
+			width: 15%;
+			height: 2%;
+			top: 32%;
+			left: 0%;
+			background-color: chartreuse;
+		}
+		#barrier3{
+			position:absolute;
+			height: 2%;
+			top: 32%;
+			background-color: chartreuse;
+			width: 34%;
+			right: 12%;
+		}
+		#barrier4{
+			position: absolute;
+			height: 2%;
+			top: 32%;
+			background-color: chartreuse;
+			width: 5%;
+			left: 40%;
+		}
+		#barrier5{
+			height: 12%;
+			width: 2%;
+			position: absolute;
+			top: 0%;
+			left: 27%;
+			background-color: chartreuse;
+		}
+		#barrier6{
+			height: 20%;
+			width: 2%;
+			position: absolute;
+			top: 54%;
+			left: 27%;
+			background-color: chartreuse;
+		}
+		#round1{
+			width: 23%;
+			height: 40%;
+			position:absolute;
+			outline: 1px solid white;
+			left: 16%;
+			top: 13%;
+			border-radius: 20%;
+		}
+		#round2{
+			width: 19%;
+			height: 34%;
+			position:absolute;
+			outline: 1px solid white;
+			left: 18%;
+			top: 16%;
+			border-radius: 20%;
+		}
+		#round3{
+			width: 15%;
+			height: 28%;
+			position:absolute;
+			outline: 1px solid white;
+			left: 20%;
+			top: 19%;
+			border-radius: 20%;
+		}
+		#round4{
+			width: 11%;
+			height: 22%;
+			position:absolute;
+			outline: 1px solid white;
+			left: 22%;
+			top: 22%;
+			border-radius: 20%;
+		}
+		#round5{
+			width: 5%;
+			height: 16%;
+			position:absolute;
+			outline: 1px solid white;
+			left: 25%;
+			top: 25%;
+			background-color: chartreuse;
+			border-radius: 20%;
+		}
+		a{
+			width: 20%;
+			height: 20%;
+			position: absolute;
+			top: 40%;
+		}
+		#left{
+			left: 60%;
+			top: 63%;
+		}
+		#right{
+			top: 63%;
+			left: 45%;
+		}
+		#up{
+			top: 58%;
+			left: 54%;
+		}
+		#down{
+			top: 68%;
+			left: 53%;
+		}
 		
-        <!--
-
-            function Redirect() {
-               window.location = "file:///C:/Users/PC/Documents/0w3nso.html";
-            }
-
-            function Redirect2() {
-            	window.location = "file:///C:/Users/PC/Documents/Projects.html"
-            }
-         //-->
-
-	</script>
-
+	</style>
 </head>
 <body>
 
-	<img src="https://th.bing.com/th/id/R8d3ce89d7b4f960ff601e0f9e88845d4?rik=FWLMp2qE1azt9g&pid=ImgRaw" style="width:100%;height:320px; top:7%;">
-	<img src="https://th.bing.com/th/id/OIP.s4ME-4e7Bei1FCCBX7skDgHaE8?w=236&h=180&c=7&o=5&dpr=1.5&pid=1.7" style="width:17%;height:22%; top:75%;">
-	<img src="https://th.bing.com/th/id/OIP.gIEv3zO_iFJO0bB-0zp8mwHaE8?w=221&h=180&c=7&o=5&dpr=1.5&pid=1.7" style="width:17%;height:22%; top:75%; left: 23%;">
-	<img src="https://th.bing.com/th/id/OIP.s_keorX6hfsWqcX5xXP5NQHaE7?w=235&h=180&c=7&o=5&dpr=1.5&pid=1.7" style="width:17%;height:22%; top:75%; left: 46%;">
-	<img src="https://th.bing.com/th/id/OIP.s42rYQOXKuoZlECxqt2ZjwAAAA?w=313&h=176&c=7&o=5&dpr=1.5&pid=1.7" style="width:17%;height:22%; top:75%; left: 69%;">
+	<div id="container">
+		<div id="reserve1"></div>
+		<div id="reserve2"></div>
+		<div id="reserve3"></div>
+		<div id="reserve4"></div>
+		<div id="reserve5"></div>
+		<div id="angle"></div>
+		<div id="barrier1"></div>
+		<div id="barrier2"></div>
+		<div id="barrier3"></div>
+		<div id="barrier4"></div>
+		<div id="barrier5"></div>
+		<div id="barrier6"></div>
+		<div id="round1"></div>
+		<div id="round2"></div>
+		<div id="round3"></div>
+		<div id="round4"></div>
+		<div id="round5"></div>
+		<div id="car1" ><a href="https://us.123rf.com/450wm/ihorbiliavskyi/ihorbiliavskyi1812/ihorbiliavskyi181200025/114296144-car-from-above-top-view-cute-cartoon-car-with-shadows-modern-urban-civilian-vehicle-one-of-the-colle.jpg?ver=6"></a></div>
+	</div>
 	
-	<header class="header">
-        <nav class="navbar">
-            <a href="#" class="nav-logo">Ow3nso</a>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="#" class="nav-link" onclick ="Redirect();">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link" onclick="Redirect2()">Projects</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
-</header>
+	<hr style="height: 12%; background-color: white; position: absolute; left: 20%; top: 0%;">
+	<hr style="height: 12%; background-color: white; position: absolute; left: 24%; top: 0%;">
+	<hr style="height: 12%; background-color: white; position: absolute; left: 33%; top: 0%;">
+	<hr style="height: 12%; background-color: white; position: absolute; left: 37%; top: 0%;">
+	<hr style="height: 20%; background-color: white; position: absolute; left: 20%; top: 54%;">
+	<hr style="height: 20%; background-color: white; position: absolute; left: 24%; top: 54%;">
+	<hr style="height: 20%; background-color: white; position: absolute; left: 33%; top: 54%;">
+	<hr style="height: 20%; background-color: white; position: absolute; left: 37%; top: 54%;">
+	<hr style="width: 100%; background-color: yellow; bottom: 12%; position: absolute; height: 1%;">
+	<hr style="position: absolute; background-color: yellow; width: 0.5%; height: 20%; top: 54%; right: 21%;">
+    <hr style="background-color: white; width: 15%; position: absolute;  top: 22%;">
+	<hr style="background-color: white; width: 15%; position: absolute;  top: 17%;">
+	<hr style="background-color: white; width: 15%; position: absolute;  top: 27%;">
+    <hr style="background-color: white; width: 15%; position: absolute;  top: 39%;">
+	<hr style="background-color: white; width: 15%; position: absolute;  top: 44%;">
+	<hr style="background-color: white; width: 15%; position: absolute;  top: 49%;">
+	<hr style="background-color: white; width: 59%; position: absolute;  top: 22%; right: -1%;" >
+	<hr style="background-color: white; width: 59%; position: absolute;  top: 17%; right: -1%;" >
+	<hr style="background-color: white; width: 59%; position: absolute;  top: 27%; right: -1%;" >
+	<hr style="background-color: white; width: 59%; position: absolute;  top: 22%; right: -1%;" >
+	<hr style="background-color: white; width: 59%; position: absolute;  top: 44%; right: -1%;" >
+	<hr style="background-color: white; width: 59%; position: absolute;  top: 39%; right: -1%;" >
+	<hr style="background-color: white; width: 59%; position: absolute;  top: 49%; right: -1%;" >
+	<button id="left">LEFT</button>
+	<button id="right" onclick="moveRight()">RIGHT</button>
+	<button id="down" onclick="moveDown()">DOWN</button>
+	<button id="up" onclick="moveUP()">UP</button>
+	<script>
+		var car1 = document.getElementById("car1");
+		var pos = 0;
+		var topNum = 0;
+		var leftNum= 0;
+		
+        document.getElementById("left").addEventListener("click", moveLeft);
+		function moveLeft(){
+			if(pos >= 0){
+				pos += 20;
+				car1.style.left = pos+'px';
+			}
+		};
+		function moveRight(){
+			leftNum -= 20;
+			document.getElementById("car1").style.marginLeft = leftNum + "px";
+		};
+		function moveUP(){
+			topNum -=  20;
+			document.getElementById("car1").style.marginTop = topNum + "px";
+		}
+		function moveDown(){
+            topNum += 20;
+			document.getElementById("car1").style.marginTop = topNum + "px";
+		}
 
-        <section>
-        	<p class="aligncenter">
-    <img src="https://pbs.twimg.com/profile_images/1340953061712408576/9h7HDh9P_400x400.jpg" alt="centered image" />
-</p>
-    <center> <p2>I am Owen </p2> </center><br></br>
-    <p3>Developer-CyberSec-CTFplayer</p3>
+	</script>
 
-    <a href="file:///C:/Users/PC/Documents/Projects.html" style="top: 80%; left: 90%; color: red; font-size: 30px; position: absolute;">See More=></a>
-
-
-        
-        </section>
-
-        <center><h2>PROJECTS</h2></center>
-        
- 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
