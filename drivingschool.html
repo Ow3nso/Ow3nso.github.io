@@ -10,8 +10,8 @@
         header{
             color: black;
             background-color: dimgray;
+            padding: 100px 0;
             text-align: center;
-            padding: 100px;
         }
         body{
             margin: 0;
@@ -59,7 +59,7 @@
         nav{
             background-color: black;
             padding: 20px;
-            text-align: right;
+            text-align: center;
             color: #868686;
             font-size: 12px;
         }
@@ -162,7 +162,6 @@
     <nav>
         <ul>
             <li><a href="#">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
             <li><a href="#">CONTACT</a></li>
         </ul>
     </nav>
@@ -175,14 +174,6 @@
             <a class="button" href="https://ow3nso.github.io/0w3nso.html">MODEL TOWN BOARD</a>
         </div>
     </header>
-
-    <section class="about">
-        <h2>ABOUT</h2>
-        <hr width="50%">
-        <div>
-
-        </div>
-    </section>
 
         <div class="container">
             <h3>CONTACT ME</h3>
@@ -200,15 +191,17 @@
     <footer>
         <h3>GET IN TOUCH</h3>
         <hr width="50%">
-        <a href="#" class="fa fa-twitter"></a>
-        <a href="#" class="fa fa-google"></a>
-        <a href="#" class="fa fa-linkedin"></a>
-        <a href="#" class="fa fa-instagram"></a>
-        <P>&All rights preserved</P>
+        <a href="https://twitter.com/ow3nso" class="fa fa-twitter" ></a>
+        <a href="mailto: jeffowen04@gmail.com" class="fa fa-google"></a>
+        <a href="https://www.instagram.com/owen._so/" class="fa fa-instagram"></a>
+        <P>Created by: <span>Ow3nso</span></P>
     </footer>
 
     <script>
-        
+        function openwhatsapp(){
+            var message = document.getElementById("message");
+            window.open("https://wa.me/+254707394018?text=" + message);
+        }
     </script>
     
 </body>
