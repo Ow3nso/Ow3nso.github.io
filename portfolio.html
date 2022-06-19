@@ -17,11 +17,33 @@
   <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
   <script src="https://www.w3schools.com/lib/w3.js"></script>
 
+
     <script>
     
-        $("li").click(function (){
-          $("ul").hide();
-})
+    const mq = window.matchMedia( "(min-width: 600px)" );
+
+if (mq.matches) {
+    $(function(){
+                $("#showme").click(function(){
+                    $("ul").show();
+                });
+            });
+} else {
+    $(function(){
+                $('li').click(function(){
+                    $('ul').hide(500);
+                });
+            });
+
+            $(function(){
+                $("#showme").click(function(){
+                    $("ul").show();
+                });
+            });
+}
+
+            
+            
     
     </script>
 
@@ -328,6 +350,11 @@
                 border-radius: 4px;
                 text-decoration: none;
             }
+            nav{
+                background-color: white;
+                padding: 5px;
+                box-shadow: 0px 0.2px 0.2px 0.2px black;
+            }
             .checkbtn{
                 color: black;
                 font-size: 30px;
@@ -372,23 +399,18 @@
                 height: 100vh;
                 background: white;
                 color: white;
-                top: 39px;
+                top: 48px;
                 left: -100%;
                 text-align: center;
-                transition: all ease-in .7s;
             }
             
             header ul li{
                 display: block;
-                margin: 20px;
+                margin: 50px;
                 color: white;
-                transition: all ease-out .6s;
             }
             #check:checked ~ ul{
                 left: 0;
-            }
-            section img{
-                width: 100%;
             }
         }
     
@@ -409,15 +431,18 @@
             return(
                 <div className="div-header">
                     <header>
+                    <nav>
                         <input type="checkbox" id="check" />
+                        <div id="showme">
                         <label for="check" class="checkbtn"><i class="fa fa-bars"></i></label>
-
+                        </div>
                         <a href="#" class="logo"><img className="logo-img" src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2016/08/target.png?auto=format&q=60&fit=max&w=930" alt=""/></a>
                         <ul id="elements">
                             <li><a href="#check">Home</a></li>
                             <li><a href="#title">Portfolio</a></li>
                             <li><a href="#contactme">Contacts</a></li>    
                         </ul>
+                    </nav>
                         <div className="heading-ps">
                             <h4 className="heading-p1">Hey, I'm Jeffrey Owen</h4>
                             <h2 className="heading-p2">Passionate young tech enthusiast</h2>
@@ -438,7 +463,7 @@
             return(
                 <div className="trial-heading">
                     <h1 id="title">PORTFOLIO</h1>
-                    <hr />
+                    <hr width="60%"/>
                 </div>
             )
         }
@@ -483,14 +508,14 @@
                     <hr />
                     <div className="contact-group">
                         <div className="contact-design">
-                        <form action="https://formspree.io/f/myyoaydl" method="POST">
+                        <form id="my-form" action="https://formspree.io/f/myyoaydl" method="POST">
                             <label for="fname">Full Name</label>
                             <input type="text" id="fname" name="firstname" placeholder="John Doe" required/>
                             <label for="lname">Email</label>
                             <input type="email" id="lname" name="email" placeholder="Youremail@example.com" required/>
                             <label for="message">Message</label>
                             <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                            <input type="submit" value="submit"/>
+                            <input id="my-form-status" type="submit" value="submit"/>
                         </form>
                         </div>
                         <div className="box">
@@ -560,7 +585,37 @@
 
         ReactDOM.render(<App />, document.getElementById("root"))
 
-        
+        var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
 
     </script>             
     
